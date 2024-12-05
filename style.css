@@ -1,0 +1,90 @@
+@font-face {
+    font-family: "Montreal Regular";
+    src: url(./fonts/Montreal-Regular.woff);
+}
+@font-face {
+    font-family: "Montreal Bold";
+    src: url(./fonts/Montreal-Bold.woff);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montreal Regular";
+    text-decoration: none;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(232,232,227/1);
+}
+.preloader{
+    background-color: #000000;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow: hidden;
+    display: none;
+    pointer-events: none;
+}
+#main{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background-color: rgb(232,232,227/1);
+}
+header{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: clamp(2.25rem,2.1786rem + 0.3571vi,2.5rem);
+    padding-right: clamp(2.25rem,2.1786rem + 0.3571vi,2.5rem);
+}
+header .logo-left{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+header .logo-left p{
+    columns: #6b645c;
+    font-size: 18px;
+}
+header .menu{
+    width: 50%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+}
+.menu-line{
+    width: min-content;
+    height: 1.25rem;
+    min-height: 1.25rem;
+    position: relative;
+    overflow: hidden;
+}
+.nav-link.top-1{
+    margin-top: -1.25rem;
+}
+.nav-link{
+    display: block;
+    transition: transform 0.3s ease,opacity 0.3s ease;
+}
+.menu-line:hover .nav-link.top-1{
+    transform: translateY(20px);
+}
+.menu-line:hover .nav-link:not(.top-1){
+    transform: scale(1.2) translateY(20px);
+}
+header .menu a{
+    color: #6b645c;
+    transition: all;
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(0.16,1,0.3,1);
+}
