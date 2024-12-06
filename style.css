@@ -1,3 +1,4 @@
+/* default */
 @font-face {
     font-family: "Montreal Regular";
     src: url(./fonts/Montreal-Regular.woff);
@@ -16,8 +17,10 @@
 html,body{
     width: 100%;
     height: 100%;
-    background-color: rgb(232,232,227/1);
+    background-color: rgb(232 232 227/1);
 }
+
+/* preloader  */
 .preloader{
     background-color: #000000;
     height: 100vh;
@@ -27,15 +30,17 @@ html,body{
     left: 0;
     z-index: 999;
     overflow: hidden;
-    display: none;
+    display: block;
     pointer-events: none;
 }
 #main{
     width: 100%;
     height: 100%;
     opacity: 1;
-    background-color: rgb(232,232,227/1);
+    background-color: rgb(232 232 227/1);
 }
+
+/* header  */
 header{
     width: 100%;
     height: 50px;
@@ -87,4 +92,109 @@ header .menu a{
     transition: all;
     transition-duration: 0.6s;
     transition-timing-function: cubic-bezier(0.16,1,0.3,1);
+}
+
+/* page 1 */
+#page{
+    width: 100%;
+    height: 100vh;
+    padding-left: clamp(2.25rem,2.1786rem + 0.3571vi,2.5rem);
+    padding-right: clamp(2.25rem,2.1786rem + 0.3571vi,2.5rem);
+}
+#page .top h1{
+    text-wrap: balance;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin-top: 2rem;
+}
+#page .top h1 svg{
+    padding-top: 3rem;
+    width: 100%;
+    height: 100%;
+}
+#page .top h1 svg path{
+    transform: translateY(100%);
+    opacity: 0;
+}
+#page .bottom{
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0,1fr));
+    margin-top: 4rem;
+    position: relative;
+    height: 30vh;
+    padding-bottom: 4rem;
+}
+#page .bottom .left{
+    height: 45vh;
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+#page .bottom .left svg{
+    font-size: 28px;
+}
+#page .bottom .left p{
+    font-size: clamp(1rem,0.9286rem + 0.3571vi,1.25rem);
+    color: rgb(100, 86, 85);
+    max-width: 30vw;
+    line-height: 120%;
+    text-wrap: balance;
+}
+#page .bottom .left button{
+    background-color: rgb(57 54 50/1);
+    padding-left: clamp(2.25rem,2.1786rem + 0.3571vi,2.5rem);
+    padding-right: clamp(2.25rem,2.1786rem + 0.3571vi,2.5rem);
+    padding-top: clamp(1.125rem,1.0893rem + 0.1786vi,1.25rem);
+    padding-bottom: clamp(1.125rem,1.0893rem + 0.1786vi,1.25rem);
+    color: rgb(232 232 227/1);
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-size: clamp(1rem,0.9286rem + 0.3571vi,1.25rem);
+    border: none;
+    border-radius: 50px;
+}
+#page .bottom .left button:hover{
+    background-color: rgb(140 140 115/1);
+}
+#page .bottom .middle{
+    grid-column: span 4;
+    height: 45vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#page .bottom .middle .image{
+    overflow: hidden;
+    width: 25vw;
+    height: 50vh;
+    position: relative;
+}
+#page .bottom .middle .image img{
+    filter: grayscale(100%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    transition: all 0.3s linear;
+}
+#page .bottom .right{
+    height: 45vh;
+    display: flex;
+    grid-column: span 4;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+}
+#page .bottom .right p{
+    color: rgb(100, 86, 85);
+    font-size: clamp(0.875rem,0.5393rem + 0.5786vi,1.25rem);
+    text-transform: uppercase;
+}
+#page .bottom .right h2{
+    font-size: clamp(3rem,2.5rem + 3.75vi,5.635rem);
+    text-transform: uppercase;
+    color: rgb(100, 86, 85);
 }
